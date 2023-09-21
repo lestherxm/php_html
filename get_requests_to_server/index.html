@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const formData = new FormData();
+        
+        formData.append('name', 'Lesther XM');
+        formData.append('age', '22');
+        formData.append('favorite_color', 'white');
+        
+        fetch('server.php?favorite_color=black', {
+            body: formData,
+            method: 'POST'
+        })
+        .then(res => res.text())
+        .then(data =>{
+            console.log(data);
+        });
+
+    </script>
+</body>
+</html>
